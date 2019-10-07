@@ -77,6 +77,7 @@ If we remember that our file is just a regular JSON file, open the file and pull
 
 ```python
 import json
+import requests
 
 def get_keys(path):
     with open(path) as f:
@@ -93,9 +94,9 @@ So the line below would become:
 
 
 ```python
-keys = get_keys("/Users/YOUR_USERNAME_HERE/.secret/yelp_api.json")
+keys = get_keys("/Users/Flatiron_User/.secret/yelp_api.json")
 
-api_key = keys['api_key']
+api_key = keys["api_key"]
 
 #While you may wish to print out these API keys to check that they imported properly,
 #be sure to clear the output before uploading to Github. 
@@ -132,8 +133,8 @@ print(response.text[:1000])
 
     <Response [200]>
     <class 'str'>
-    {"businesses": [{"id": "jeWIYbgBho9vBDhc5S1xvg", "alias": "holy-guacamole-astoria", "name": "Holy Guacamole", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/8IjT2jd7vKDSOmtdXPI-Zg/o.jpg", "is_closed": false, "url": "https://www.yelp.com/biz/holy-guacamole-astoria?adjust_creative=xNHtXRpNa-MXGFJJTHHUvw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=xNHtXRpNa-MXGFJJTHHUvw", "review_count": 108, "categories": [{"alias": "mexican", "title": "Mexican"}, {"alias": "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 40.756621, "longitude": -73.929336}, "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1": "3555 31st St", "address2": "", "address3": "", "city": "Astoria", "zip_code": "11106", "country": "US", "state": "NY", "display_address": ["3555 31st St", "Astoria, NY 11106"]}, "phone": "+19178327261", "display_phone": "(917) 832-7261", "distance": 1290.4274875130448}, {"id": "6AJwsgXr7YwsqneGVAdgzw", "alias": "las-c
-
+    {"businesses": [{"id": "jzVv_21473lAMYXIhVbuTA", "alias": "de-mole-astoria-astoria", "name": "De Mole Astoria", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zZTTfdIGbQkQQptgQmin1A/o.jpg", "is_closed": false, "url": "https://www.yelp.com/biz/de-mole-astoria-astoria?adjust_creative=MWtPiCISklUX44QoZN6zxA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=MWtPiCISklUX44QoZN6zxA", "review_count": 358, "categories": [{"alias": "mexican", "title": "Mexican"}], "rating": 4.0, "coordinates": {"latitude": 40.7625999, "longitude": -73.9129028}, "transactions": ["delivery", "pickup"], "price": "$$", "location": {"address1": "4220 30th Ave", "address2": "", "address3": "", "city": "Astoria", "zip_code": "11103", "country": "US", "state": "NY", "display_address": ["4220 30th Ave", "Astoria, NY 11103"]}, "phone": "+17187771655", "display_phone": "(718) 777-1655", "distance": 918.0927716406379}, {"id": "yvva7IYpD6J7OfKlCdQrkw", "alias": "mi-espiguita-taqueria-astoria", "na
+    
 
 ## Breaking Down the Request
 
@@ -193,7 +194,7 @@ for key in response.json().keys():
     
     
     
-
+    
 
 Let's continue to preview these further to get a little better acquainted.
 
@@ -301,7 +302,7 @@ df.head() #Previews the first five rows.
            'image_url', 'is_closed', 'location', 'name', 'phone', 'price',
            'rating', 'review_count', 'transactions', 'url'],
           dtype='object')
-
+    
 
 
 
